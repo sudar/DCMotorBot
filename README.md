@@ -16,7 +16,7 @@ The library supports the following operations
 ## Examples
 The library has an example sketch under the /examples folder which explains how to control the bot.
 
-SimpleBot.ino – Shows the normal way of using the library
+BasicBot.ino – Shows the normal way of using the library
 
 ## Dependency
 
@@ -48,3 +48,4 @@ More details about this project and the support for this project can be found at
 - Add detailed schematics
 - Add more examples
 - Add speed control through PWM
+- Add keywords file

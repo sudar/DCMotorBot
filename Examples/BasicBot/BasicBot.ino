@@ -5,7 +5,7 @@
 */
 
 /*
- * Copyright 2012  Sudar Muthu  (email : sudar@sudarmuthu.com)
+ * Copyright 2012  Sudar Muthu  (http://hardwarefun.com)
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
  * <sudar@sudarmuthu.com> wrote this file. As long as you retain this notice you
@@ -19,10 +19,11 @@ DCMotorBot bot;
 
 void setup() {
 
-    // initialize bot
-    bot.setEnablePins(2, 3);
-    bot.setControlPins(4, 5, 6, 7);
+    // initialize bot pins
+    bot.setEnablePins(3, 5);
+    bot.setControlPins(2, 4, 7, 8);
 
+    // for debugging
     pinMode(13, OUTPUT);
 
 }
@@ -36,6 +37,7 @@ void loop() {
     // change direction
     digitalWrite(13, HIGH);
     bot.moveBackward();
+
     delay(10000);
 }
 

@@ -22,22 +22,15 @@ void setup() {
     // initialize bot pins
     bot.setEnablePins(3, 5);
     bot.setControlPins(2, 4, 7, 8);
-
-    // for debugging
-    pinMode(13, OUTPUT);
-
 }
 
 void loop() {
-    digitalWrite(13, LOW);
     bot.moveForward();
-
-    delay(10000);
-
-    // change direction
-    digitalWrite(13, HIGH);
+    delay(2000);
     bot.moveBackward();
-
-    delay(10000);
+    delay(2000);
+    bot.turnLeft();
+    delay(2000);
+    bot.turnRight();
+    delay(2000);
 }
-

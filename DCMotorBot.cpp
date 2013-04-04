@@ -71,6 +71,14 @@ void DCMotorBot::setDelay(int delay) {
  * Start the bot and move forward
  */
 void DCMotorBot::start() {
+    moveForward();
+}
+
+/**
+ * Move forward
+ */
+void DCMotorBot::moveForward() {
+
     digitalWrite(mE1, HIGH);
     digitalWrite(mE2, HIGH);
 
@@ -80,13 +88,6 @@ void DCMotorBot::start() {
     digitalWrite(mI2, LOW);
     digitalWrite(mI3, HIGH);
     digitalWrite(mI4, LOW);
-}
-
-/**
- * Move forward
- */
-void DCMotorBot::moveForward() {
-    start();
 }
 
 /**

@@ -28,6 +28,12 @@ After downloading place the DCMotorBot folder inside your Arduino's library fold
 
 Connect the DC motors to Arduino using H-Bridge IC like L293D. 
 
+You can find a copy of L293D's [datasheet](datasheet/l293d.pdf) and [pin out diagram](datasheet/l293d-pinout.png) inside in the /datasheet directory
+
+The following is the pin out diagram of the IC.
+
+![](datasheet/l293d-pinout.png)
+
 _TODO_: Add more details and schematics.
 
 ## License

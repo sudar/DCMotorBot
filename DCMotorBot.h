@@ -37,6 +37,7 @@ public:
     void setEnablePins(byte el, byte e2);
     void setControlPins(byte I1, byte I2, byte I3, byte I4);
     void setDelay(int delay);
+    void setSpeed(int speed);
 
     // movement functions
     void start();
@@ -46,9 +47,16 @@ public:
     void turnRight();
     void stop();
 
+    // movement functions for front steering
+    void goForward();
+    void goBackward();
+    void steerLeft();
+    void steerRight();
+
 private:
 
     int mDelay; // delay while switching
+    int mSpeed; // PWM motor speed
 
     // enable pins
     byte mE1;

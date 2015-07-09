@@ -32,6 +32,7 @@ DCMotorBot::DCMotorBot() {
     setEnablePins(1, 2);
     setControlPins(3, 4, 5, 6);
     setDelay(10);
+    setSpeed(255);
 }
 
 /**
@@ -68,6 +69,13 @@ void DCMotorBot::setDelay(int delay) {
 }
 
 /**
+ * Set PWM Speed
+ */
+void DCMotorBot::setSpeed(int speed) {
+    mSpeed = speed;
+}
+
+/**
  * Start the bot and move forward
  */
 void DCMotorBot::start() {
@@ -78,9 +86,8 @@ void DCMotorBot::start() {
  * Move forward
  */
 void DCMotorBot::moveForward() {
-
-    digitalWrite(mE1, HIGH);
-    digitalWrite(mE2, HIGH);
+    analogwrite(mE1, mSpeed);
+    analogWrite(mE2, mSpeed);
 
     delay(mDelay);
 
@@ -94,8 +101,8 @@ void DCMotorBot::moveForward() {
  * Move backward
  */
 void DCMotorBot::moveBackward() {
-    digitalWrite(mE1, LOW);
-    digitalWrite(mE2, LOW);
+    analogwrite(mE1, mSpeed);
+    analogWrite(mE2, mSpeed);
 
     delay(mDelay);
 
@@ -153,4 +160,61 @@ void DCMotorBot::turnRight() {
 void DCMotorBot::stop() {
     digitalWrite(mE1, LOW);
     digitalWrite(mE2, LOW);
+}
+
+/**
+ * Turn wheel left
+ */
+void DCMotorBot::steerLeft(){
+    digitalWrite(mE2, LOW);
+
+    delay(mDelay);
+
+    digitalWrite(mE1, HIGH);
+
+    digitalWrite(mI1, HIGH);
+    digitalWrite(mI2, LOW);
+
+}
+ /**
+ * Turn wheel right
+ */
+void DCMotorBot::steerRight(){
+    digitalWrite(mE2, LOW);
+
+    delay(mDelay);
+
+    digitalWrite(mE1, HIGH);
+
+    digitalWrite(mI1, LOW);
+    digitalWrite(mI2, HIGH);
+
+}
+/**
+ * move forward width one drive motor
+ */
+void DCMotorBot::goForward() {
+    digitalWrite(mE1, LOW);
+
+    delay(mDelay);
+
+    analogWrite(mE2, mSpeed);
+
+    digitalWrite(mI3, LOW);
+    digitalWrite(mI4, HIGH);
+
+}
+/**
+ * move backward width one drive motor
+ */
+void DCMotorBot::goBackward() {
+    analogWrite(mE1, mSpeed);
+
+    delay(mDelay);
+
+    digitalWrite(mE2, HIGH);
+
+    digitalWrite(mI3, HIGH);
+    digitalWrite(mI4, LOW);
+
 }

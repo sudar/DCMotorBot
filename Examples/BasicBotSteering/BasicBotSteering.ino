@@ -13,7 +13,7 @@
  * this stuff is worth it, you can buy me a beer or coffee in return - Sudar
  * ----------------------------------------------------------------------------
  */
-#include <Bot.h>
+#include <DCMotorBot.h>
 
 DCMotorBot bot;
 

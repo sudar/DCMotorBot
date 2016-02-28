@@ -86,7 +86,7 @@ void DCMotorBot::start() {
  * Move forward
  */
 void DCMotorBot::moveForward() {
-    analogwrite(mE1, mSpeed);
+    analogWrite(mE1, mSpeed);
     analogWrite(mE2, mSpeed);
 
     delay(mDelay);
@@ -101,7 +101,7 @@ void DCMotorBot::moveForward() {
  * Move backward
  */
 void DCMotorBot::moveBackward() {
-    analogwrite(mE1, mSpeed);
+    analogWrite(mE1, mSpeed);
     analogWrite(mE2, mSpeed);
 
     delay(mDelay);

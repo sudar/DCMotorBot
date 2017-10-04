@@ -106,9 +106,6 @@ void DCMotorBot::moveBackward() {
 
     delay(mDelay);
 
-    digitalWrite(mE1, HIGH);
-    digitalWrite(mE2, HIGH);
-
     digitalWrite(mI1, LOW);
     digitalWrite(mI2, HIGH);
     digitalWrite(mI3, LOW);
@@ -126,7 +123,7 @@ void DCMotorBot::turnLeft() {
     delay(mDelay);
 
     digitalWrite(mE1, LOW);
-    digitalWrite(mE2, HIGH);
+    analogWrite(mE2, mSpeed);
 
     digitalWrite(mI1, HIGH);
     digitalWrite(mI2, LOW);
@@ -144,7 +141,7 @@ void DCMotorBot::turnRight() {
 
     delay(mDelay);
 
-    digitalWrite(mE1, HIGH);
+    analogWrite(mE1, mSpeed);
     digitalWrite(mE2, LOW);
 
     digitalWrite(mI1, HIGH);
@@ -170,7 +167,7 @@ void DCMotorBot::steerLeft(){
 
     delay(mDelay);
 
-    digitalWrite(mE1, HIGH);
+    analogWrite(mE1, mSpeed);
 
     digitalWrite(mI1, HIGH);
     digitalWrite(mI2, LOW);
@@ -184,7 +181,7 @@ void DCMotorBot::steerRight(){
 
     delay(mDelay);
 
-    digitalWrite(mE1, HIGH);
+    analogWrite(mE1, mSpeed);
 
     digitalWrite(mI1, LOW);
     digitalWrite(mI2, HIGH);
